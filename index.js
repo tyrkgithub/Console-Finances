@@ -86,10 +86,8 @@ var finances = [
     ['Jan-2017', 138230],
     ['Feb-2017', 671099]
     ];
-    
-    console.table(finances);
 
-    console.log(finances[24][1]);
+
 
     // Amount of months
     
@@ -104,9 +102,6 @@ var finances = [
     for (let i = 0; i < finances.length; i++) { // the for loop says to go to the next element until it reaches the end
         totalEarnings += finances[i][1]; // says that total earnings is equivalent to the sum of all the second elements in finances
     } 
-
-
-
     console.log("Total Earnings (+/-): +£" +totalEarnings)
     
 
@@ -119,29 +114,43 @@ var finances = [
 
 
 
-    // Max Increase
+    // Largest Profit and Loss
+
+    var bigProfit = 0 //this is the starting value to be compared in the calculation below
+    var bigProfitMonth // this creates a variable to be used below
+    var bigLoss = 0
+    var bigLossMonth
+    var profitChange = 0
+
+    for (let i = 0; i < finances.length; i++) { // loops the following calculation to run until the end of the finances array
+        if (i > 0){ // says don't run the calculation from the first array (as there is not a value before the first array to be used in a calculation)
     
-   
-    // -create a for loop to run the calculation for each finance array.      for
-    // -Have the beginning of the loop start on the first finance array.      (let I = 0;
-    // -If value i is less than the array length then it will move to the next element util it has ran the full length.      I < finances.length; i++)
-    
-    // -create an if statement. If I is greater than the first array then do {this}.     If (I =0) {
-    
-    // -create an if statement.     If 
-    // -create caluclation  if "b" take away month "a".    (finances[i][1] - finances[i-1][1])
-    //  has a greater value than bigProfit then big profit the do {this}     > bigProfit {
-    // -give bigProfit the value of month b - month a. this will appear as a number.       bigProfit = (finances[i][1] - finances[i-1][1])
-    // -give bigProfitMonth the value of the month. Get the month name by selecting the first value within the current element by using 0, instead of 1 which is selecting the second value. This will appear as a string.       bigProfitMonth = (finances[i][0])}
-    
-    // For (let i = 0; i < finances.length; i++) {
-    
-    //     If (I > 0)
-    
-    //         {if ((finances[i][1] - finances[i-1][1]) > bigProfit) {
-    //             bigProfit = (finances[i][1] - finances[i-1][1])
-    //             bigProfitMonth = (finances[i][0])}
-    
-    //         {if ((finances[i][1] - finances[i-1][1]) < bigLoss {
-    //             bigLoss = (finances[i][1] - finances[i-1][1])
-    //             bigLossMonth = (finances[i][0])}
+    // Largest Profit
+
+            if ((finances[i][1] - finances[i-1][1]) > bigProfit) { // calculation to subtract the "second" month form the "first" month. if the calculation has a larger value than bigProfit then do the following 
+                bigProfit = (finances[i][1] - finances[i-1][1]) // selects this calculation as the value of bigProfit
+                bigProfitMonth = (finances[i][0])} //selects the month name from the calculation as the value of bigProfitMonth
+            
+
+    // Largest Loss
+
+            if ((finances[i][1] - finances[i-1][1]) < bigLoss) { //if the calculation has a lower value than bigProfit then do the following 
+                bigLoss = (finances[i][1] - finances[i-1][1])
+                bigLossMonth = (finances[i][0])}
+            
+
+    //Average Change
+
+            profitChange += (finances[i][1]) - (finances[i-1][1]) //
+
+        }
+    }
+    console.log(profitChange)
+
+    let averageChange = profitChange / (finances.length - 1)
+
+    console.log("Average Profit or Loss Over the Entire Period: $" + averageChange)
+    console.log("Month of Largest Profit and Amount: " + bigProfitMonth + " $" + bigProfit)
+    console.log("Month of Largest Profit and Amount: " + bigLossMonth + " $" + bigLoss)
+
+
