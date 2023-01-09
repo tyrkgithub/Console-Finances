@@ -1,3 +1,4 @@
+//Starting dataset
 var finances = [
     ['Jan-2010', 867884],
     ['Feb-2010', 984655],
@@ -87,6 +88,10 @@ var finances = [
     ['Feb-2017', 671099]
     ];
 
+    
+    // Console Title
+    console.log("Financial Analysis");
+    console.log("------------------")
 
 
     // Amount of months
@@ -97,18 +102,10 @@ var finances = [
     
     // Total Earnings
     let totalEarnings = 0; //starts the total earnings at 0
-    for (let i = 0; i < finances.length; i++) { // the for loop says to go to the next element until it reaches the end
-        totalEarnings += finances[i][1]; // says that total earnings is equivalent to the sum of all the second elements in finances
+    for (let i = 0; i < finances.length; i++) { // the for loop says to change to the next array until it reaches the end on the array
+        totalEarnings += finances[i][1]; // says that total earnings is equal to the sum of all the second elements in finances array
     } 
-    console.log("Total Earnings (+/-) over the Entire Period: +£" +totalEarnings)
-    
-
-    
-    // Average - This is from when I misread the assignment and thought I was being asked to calculate the average earnings per month
-    
-    // averagePM = totalEarnings / finances.length; //divides the total earnings by amount of months
-    // average = averagePM.toFixed(2); // fixed to X amount of decimal places
-    // console.log("Average Difference Per Month: £" +average)
+    console.log("Total Earnings (+/-) over the Entire Period: £" +totalEarnings)
 
 
 
@@ -125,7 +122,7 @@ var finances = [
     
     // Largest Profit
             if ((finances[i][1] - finances[i-1][1]) > bigProfit) { // calculation to subtract the "second" month form the "first" month. if the calculation has a larger value than bigProfit then do the following 
-                bigProfit = (finances[i][1] - finances[i-1][1]) // selects this calculation as the value of bigProfit
+                bigProfit = (finances[i][1] - finances[i-1][1]) // selects this calculations value as the value of bigProfit
                 bigProfitMonth = (finances[i][0])} //selects the month name from the calculation as the value of bigProfitMonth
             
 
@@ -137,7 +134,6 @@ var finances = [
 
     //Average Change
             profitChange += (finances[i][1]) - (finances[i-1][1]) // profit change is the sum of all the differences between each month
-
         }
     }
     let averageChange = profitChange / (finances.length - 1) // average change is the profit change divided the by amounth of times the previous calculation ran
