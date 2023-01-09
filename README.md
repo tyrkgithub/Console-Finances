@@ -18,7 +18,7 @@
   
   <br/>
   
-  <p> Please find the link to my deployed application <a href="https://tyrkgithub.github.io/bootstrap-portfolio">here.</a> </p>
+  <p> Please find the link to my deployed application <a href="https://tyrkgithub.github.io/Console-Finances/>here.</a> </p>
   
   <br/>
   
@@ -26,7 +26,7 @@
   
   <br/>
   
-  <p>A company have given me a dataset composed of arrays with two fields, Date and Profit/Losses. They wants me to create code which helps keeps track of their finances. They <br/>
+  <p>A company have given me a dataset composed of arrays with two fields, Date and Profit/Losses. They wants me to create code which helps keeps track of their finances.<br/>
   </p>
   
   <br/>
@@ -40,8 +40,8 @@
   <ul>
     <li>The total number of months are calculated and displayed</li>
     <li>The net total amount of Profit/Losses over the entire period are calculated and displayed</li>
-    <li>The average of the changes in Profit/Losses over the entire period are calculated and displayed<li>
-    <li>The greatest increase in profits (date and amount) over the entire period  are calculated and displayed/li>
+    <li>The average of the changes in Profit/Losses over the entire period are calculated and displayed</li>
+    <li>The greatest increase in profits (date and amount) over the entire period  are calculated and displayed</li>
     <li>The greatest decrease in losses (date and amount) over the entire period are calculated and displayed</li>
   </ul>
   
