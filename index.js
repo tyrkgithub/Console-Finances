@@ -90,32 +90,30 @@ var finances = [
 
 
     // Amount of months
-    
     let totalMonths = finances.length; //counts the amount of elements 
-    console.log("Total Months: " +totalMonths);
+    console.log("Total Months in Entire Period: " +totalMonths);
     
 
     
     // Total Earnings
-    
     let totalEarnings = 0; //starts the total earnings at 0
     for (let i = 0; i < finances.length; i++) { // the for loop says to go to the next element until it reaches the end
         totalEarnings += finances[i][1]; // says that total earnings is equivalent to the sum of all the second elements in finances
     } 
-    console.log("Total Earnings (+/-): +£" +totalEarnings)
+    console.log("Total Earnings (+/-) over the Entire Period: +£" +totalEarnings)
     
 
     
-    // Average
+    // Average - This is from when I misread the assignment and thought I was being asked to calculate the average earnings per month
     
-    averagePM = totalEarnings / finances.length; //divides the total earnings by amount of months
-    average = averagePM.toFixed(2); // fixed to X amount of decimal places
-    console.log("Average Difference Per Month: £" +average)
+    // averagePM = totalEarnings / finances.length; //divides the total earnings by amount of months
+    // average = averagePM.toFixed(2); // fixed to X amount of decimal places
+    // console.log("Average Difference Per Month: £" +average)
 
 
 
     // Largest Profit and Loss
-
+    //Key
     var bigProfit = 0 //this is the starting value to be compared in the calculation below
     var bigProfitMonth // this creates a variable to be used below
     var bigLoss = 0
@@ -126,30 +124,27 @@ var finances = [
         if (i > 0){ // says don't run the calculation from the first array (as there is not a value before the first array to be used in a calculation)
     
     // Largest Profit
-
             if ((finances[i][1] - finances[i-1][1]) > bigProfit) { // calculation to subtract the "second" month form the "first" month. if the calculation has a larger value than bigProfit then do the following 
                 bigProfit = (finances[i][1] - finances[i-1][1]) // selects this calculation as the value of bigProfit
                 bigProfitMonth = (finances[i][0])} //selects the month name from the calculation as the value of bigProfitMonth
             
 
     // Largest Loss
-
             if ((finances[i][1] - finances[i-1][1]) < bigLoss) { //if the calculation has a lower value than bigProfit then do the following 
                 bigLoss = (finances[i][1] - finances[i-1][1])
                 bigLossMonth = (finances[i][0])}
             
 
     //Average Change
-
-            profitChange += (finances[i][1]) - (finances[i-1][1]) //
+            profitChange += (finances[i][1]) - (finances[i-1][1]) // profit change is the sum of all the differences between each month
 
         }
     }
-    console.log(profitChange)
+    let averageChange = profitChange / (finances.length - 1) // average change is the profit change divided the by amounth of times the previous calculation ran
 
-    let averageChange = profitChange / (finances.length - 1)
 
-    console.log("Average Profit or Loss Over the Entire Period: $" + averageChange)
+    //Console Log
+    console.log("Average Profit or Loss Per Month: $" + averageChange.toFixed(2))
     console.log("Month of Largest Profit and Amount: " + bigProfitMonth + " $" + bigProfit)
     console.log("Month of Largest Profit and Amount: " + bigLossMonth + " $" + bigLoss)
 
