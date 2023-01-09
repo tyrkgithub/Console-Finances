@@ -18,7 +18,7 @@
   
   <br/>
   
-  <p> Please find the link to my deployed application <a href="https://tyrkgithub.github.io/Console-Finances/>here.</a> </p>
+  <p> Please find the link to my deployed application <a href="https://tyrkgithub.github.io/Console-Finances">here.</a> </p>
   
   <br/>
   
@@ -60,7 +60,10 @@
  
   <br/>
 
-  <p>Below are screenshots of my financial analysis printed in the console.</p>
+  <p>Below are screenshots of my financial analysis printed in the console.</p> 
+  
+  <img width="415" alt="Untitled" src="https://user-images.githubusercontent.com/118772733/211407470-45295532-5455-4968-9348-a9cacba27bd4.png">
+
 
 
   <br/>
